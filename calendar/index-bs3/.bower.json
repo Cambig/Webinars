@@ -1,0 +1,15 @@
+{
+  "name": "index-bs3",
+  "_cacheHeaders": {
+    "ETag": "\"551907d93abcf1:0\"",
+    "Last-Modified": "Wed, 30 Jul 2014 01:13:37 GMT",
+    "Content-Length": "6854",
+    "Content-Type": "text/html"
+  },
+  "_release": "e-tag:551907d93",
+  "main": "index.html",
+  "_source": "http://bootstrap-calendar.azurewebsites.net/index-bs3.html",
+  "_target": "*",
+  "_originalSource": "http://bootstrap-calendar.azurewebsites.net/index-bs3.html",
+  "_direct": true
+}
