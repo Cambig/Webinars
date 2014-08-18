@@ -12,19 +12,24 @@
   <link rel="stylesheet" href="calendar/bootstrap-calendar/css/calendar.css">
 
 </head>
+
 <body>
-
-<div class="container">
-  <div class="jumbotron">
-    <block></block>
-    <h1>Webinar Educationals</h1>
-    <h2 style="font-size: 35px"> By<img src="img/logo.jpeg" alt="VMware Logo" style="width: 200px"></h2>
-
-    <p>Calendar for Webinars</p>
+    
+    <div class="nav navbar-inverse">
+      <h1> Webinar Educationals<img src="img/logo1.jpeg" alt="VMware Logo" style="width: 100px">
+      </h1>
+    </div>
   </div>
 
-  <div class="page-header">
+  <div class="container-right">
+    <b>Educationals</b>
+    <div id="eventlist"></div>
+  </div>
 
+
+  <div class="container"> 
+
+  <div class="page-header">
     <div class="pull-right form-inline">
       <div class="btn-group">
         <button class="btn btn-success" data-calendar-nav="prev"><< Previous<Prev</button>
@@ -38,17 +43,13 @@
         <button class="btn btn-warning" data-calendar-view="day">Day</button>
       </div>
     </div>
-    <h3>Month Appears Here</h3>
-    <small>Webinar events will be stored on the calendars.  Go sign up!</small></div>
+    <h3> Month Appears Here</h3>
+    <small>Educationals Hosted by VMware.  Go sign up!</small></div>
 
 
 <div id="calendar"></div>
 
- 
 
- 
-
-  
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
@@ -61,7 +62,17 @@
         var calendar = $('#calendar').calendar(
             {
                 tmpl_path: "calendar/bootstrap-calendar/tmpls/",
-                events_source: function () { return []; }
+                events_source: function () { 
+                  return $.get('https://www.googleapis.com/calendar/v3/calendars/bigelow.cameron%40gmail.com/events?').done(function(data) {
+                  return 
+                  ["id",
+                  "title",
+                  "url",
+                  "start",
+                  "end"]
+                   
+                  }); 
+                }
             });         
     </script>
    <script type="text/javascript">
@@ -86,13 +97,18 @@
         $(document.createElement('li'))
           .html('<a href="' + val.url + '">' + val.title + '</a>')
           .appendTo(list);
+
       });
+
+
     },
     onAfterViewLoad: function(view) {
       $('.page-header h3').text(this.getTitle());
       $('.btn-group button').removeClass('active');
       $('button[data-calendar-view="' + view + '"]').addClass('active');
     },
+
+
     classes: {
       months: {
         general: 'label'
@@ -138,6 +154,7 @@
   });
 }(jQuery));
     </script>
+
   </body>
 </html>
 
