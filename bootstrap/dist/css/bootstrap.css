@@ -895,11 +895,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #FFF;
 }
 input,
 button,
@@ -1077,7 +1077,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 20px;
 }
 h2,
 .h2 {
@@ -1390,11 +1390,20 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+
+.container-right{
+  float: right;
+  padding-top: 100px;
+  padding-right: 100px;
+}
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+ padding-right: 15px;
+  padding-left: 70px;
   margin-right: auto;
+  float: left;
   margin-left: auto;
+  margin-top: -30px;
 }
 @media (min-width: 768px) {
   .container {
@@ -3769,7 +3778,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: -30px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -4092,8 +4101,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: #717074;
+  border-color: #717074;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4188,8 +4197,15 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: #717074;
+  border-color: #717074;
+}
+
+.navbar-inverse h1,
+.navbar-inverse .h1 {
+  color: #FFFFFF;
+  padding-left: 30px;
+  font-size: 35px;
 }
 .navbar-inverse .navbar-brand {
   color: #777;
@@ -4545,22 +4561,21 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px;
-  margin-bottom: 3px;
+  margin-bottom: -20px;
   color: inherit;
- border-style: solid;
  border-width: 5px;
  border-color: #387c2c;
-  background-color: #FFFFFF;
+ background-color: #717074;
+ border-radius: 1%;
 }
 
 .jumbotron block,
 .jumbotron .block {
 padding: 0px;
 color: inherit;
-float: right; 
+margin-left: 100x;
 margin-top: -48px;
-height: 237px;
+height: 203px;
  border-style: solid;
  border-width: 1px;
  border-color: #c2cd23;
@@ -4568,17 +4583,13 @@ background-color: #FFFFFF;
 border-radius: 7px;
 
 }
-.jumbotron h1,
-.jumbotron .h1 {
-  color: #000000;
-  font-size: 60px;
 
-}
 
 .jumbotron h2,
 .jumbotron .h2 {
   color: #000000;
-  float: right;
+  float: left;
+  margin-top: 0px;
 }
 
 .jumbotron p {
@@ -4595,6 +4606,7 @@ border-radius: 7px;
 .jumbotron .container {
   max-width: 100%;
 }
+
 @media screen and (min-width: 768px) {
   .jumbotron {
     padding-top: 48px;
